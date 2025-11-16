@@ -1,248 +1,170 @@
-<!DOCTYPE html><html lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>The Bhubaneswar Tutor - Home Tuition & NEET Prep</title>
-  <style>
-    :root{
-      --blue:#0b63d6;
-      --dark-blue:#074aa3;
-      --yellow:#f1c40f;
-      --light:#ffffff;
-      --muted:#6b7280;
-      --card:#f7fafc;
-    }
-    *{box-sizing:border-box}
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Bhubaneswar Tutor</title>
+<style>
     body {
-      margin: 0;
-      font-family: Inter, system-ui, -apple-system, Arial, sans-serif;
-      background: var(--light);
-      color: #0f1724;
-      -webkit-font-smoothing:antialiased;
+        font-family: Arial, sans-serif;
+        margin: 0;
+        background-color: white;
     }
-    header{
-      display:flex;align-items:center;justify-content:space-between;padding:18px 28px;background:linear-gradient(90deg,var(--light),#eef6ff);
-      border-bottom:3px solid rgba(11,99,214,0.08);
-      position:sticky;top:0;z-index:50;
+
+    header {
+        background: #1e3a8a; /* Blue */
+        color: white;
+        padding: 20px;
+        text-align: center;
     }
-    .logo{font-weight:800;font-size:20px;color:var(--dark-blue)}
-    nav a{margin-left:18px;text-decoration:none;color:var(--dark-blue);font-weight:600}
-    .hero{
-      display:grid;grid-template-columns:1fr 420px;gap:30px;align-items:center;padding:60px 6vw;background:linear-gradient(180deg,#ffffff,#f0f7ff);
+
+    .hero {
+        text-align: center;
+        padding: 40px 20px;
+        background: #fef08a; /* Light Yellow */
     }
-    .hero-left h1{font-size:40px;color:var(--dark-blue);margin:0 0 18px}
-    .hero-left p{color:var(--muted);font-size:18px;margin:0 0 22px}
-    .cta-row{display:flex;gap:12px;align-items:center}
-    .btn-primary{background:var(--blue);color:#fff;padding:12px 18px;border-radius:8px;text-decoration:none;font-weight:700}
-    .btn-ghost{background:transparent;color:var(--dark-blue);padding:10px 16px;border-radius:8px;border:2px solid rgba(11,99,214,0.12);font-weight:700}/* chat-like registration on right */
-.chat-card{background:#fff;border-radius:12px;box-shadow:0 8px 30px rgba(2,6,23,0.08);padding:20px;border-left:6px solid var(--yellow)}
-.chat-card h3{margin:0 0 10px;color:var(--dark-blue)}
-.chat-field{display:flex;flex-direction:column;gap:8px;margin-bottom:10px}
-.chat-field input,.chat-field select{padding:10px;border-radius:8px;border:1px solid #e6eef8}
-.small-note{font-size:13px;color:var(--muted)}
 
-.features{display:flex;gap:18px;padding:28px 6vw;flex-wrap:wrap}
-.feature{flex:1;min-width:220px;background:linear-gradient(180deg,#fff,#fbfdff);border-radius:10px;padding:18px;border:1px solid rgba(11,99,214,0.04)}
-.feature h4{margin:0 0 8px;color:var(--dark-blue)}
-.feature p{margin:0;color:var(--muted)}
+    .stats {
+        display: flex;
+        justify-content: space-around;
+        background: #93c5fd; /* Light blue */
+        padding: 30px 0;
+        color: black;
+        font-weight: bold;
+    }
 
-.stats{padding:40px 6vw;background:linear-gradient(90deg,#f7fbff,#ffffff);display:flex;gap:20px;justify-content:center;flex-wrap:wrap}
-.stat{background:var(--card);padding:18px;border-radius:10px;min-width:160px;text-align:center;border-left:6px solid var(--blue)}
-.stat strong{display:block;font-size:26px;color:var(--dark-blue)}
-.stat span{color:var(--muted)}
+    .section {
+        padding: 30px;
+        max-width: 900px;
+        margin: auto;
+    }
 
-.services{padding:40px 6vw;display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px}
-.service{background:#fff;border-radius:12px;padding:18px;border:1px solid rgba(7,74,163,0.06)}
-.service h3{margin:0 0 8px;color:var(--dark-blue)}
-.service p{margin:0;color:var(--muted)}
+    h2 {
+        color: #1e3a8a;
+    }
 
-.gallery{display:flex;gap:12px;padding:20px 6vw;flex-wrap:wrap}
-.gallery img{width:220px;height:140px;object-fit:cover;border-radius:8px;box-shadow:0 6px 20px rgba(2,6,23,0.06)}
+    .form-box {
+        background: #f0f9ff;
+        padding: 20px;
+        border-radius: 10px;
+        margin-top: 20px;
+        border-left: 5px solid #1e3a8a;
+    }
 
-.register-section{padding:40px 6vw;background:linear-gradient(180deg,#fff,#f7fbff);display:grid;grid-template-columns:1fr 1fr;gap:20px}
-.card{background:#fff;border-radius:12px;padding:20px;border:1px solid rgba(11,99,214,0.04)}
-.card h3{color:var(--dark-blue);margin-top:0}
-.form-row{display:flex;gap:12px}
-label{font-size:14px;color:var(--muted);margin-bottom:6px;display:block}
-input[type=text],input[type=tel],input[type=number],select,textarea{width:100%;padding:10px;border-radius:8px;border:1px solid #e6eef8}
-button[type=submit]{background:var(--yellow);border:none;padding:12px 16px;border-radius:8px;font-weight:800;cursor:pointer}
+    input, select, textarea {
+        width: 100%;
+        padding: 10px;
+        margin: 8px 0;
+        border-radius: 5px;
+        border: 1px solid #aaa;
+    }
 
-footer{padding:24px 6vw;text-align:center;color:var(--muted);border-top:1px solid rgba(7,74,163,0.06);background:linear-gradient(180deg,#eef6ff,#ffffff)}
+    .btn {
+        background: #1e3a8a;
+        color: white;
+        padding: 12px;
+        border: none;
+        width: 100%;
+        font-size: 16px;
+        margin-top: 10px;
+        border-radius: 5px;
+        cursor: pointer;
+    }
 
-@media(max-width:880px){
-  .hero{grid-template-columns:1fr;}
-  .register-section{grid-template-columns:1fr}
-  .gallery img{width:48%;}
-}
+    .photo-strip {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        padding: 20px 0;
+    }
 
-  </style>
+    .photo-strip img {
+        width: 200px;
+        border-radius: 15px;
+    }
+
+</style>
 </head>
 <body>
-  <header>
-    <div class="logo">The Bhubaneswar Tutor</div>
-    <nav>
-      <a href="#home">Home</a>
-      <a href="#services">Services</a>
-      <a href="#register">Register</a>
-      <a href="#contact">Contact</a>
-    </nav>
-  </header>  <section class="hero" id="home">
-    <div class="hero-left">
-      <h1>Personalised home tuition & exam coaching — at your doorstep</h1>
-      <p>CBSE & ICSE tuition, NEET • IIT-JEE • Olympiad preparation, and skill classes — trusted by students and parents across Bhubaneswar.</p>
-      <div class="cta-row">
-        <a class="btn-primary" href="#register">Register Now</a>
-        <a class="btn-ghost" href="mailto:mathandsciencewithsantosh@gmail.com">Email Us</a>
-      </div>
-      <div style="margin-top:18px" class="small-note">Call/WhatsApp: +91 7978045133</div>
-    </div><div class="chat-card" aria-hidden="false">
-  <h3>Quick Student Info — Chat</h3>
-  <form>
-    <div class="chat-field">
-      <label>Student Name</label>
-      <input type="text" placeholder="e.g. Rahul Kumar" required>
-    </div>
-    <div class="chat-field">
-      <label>Contact Number</label>
-      <input type="tel" placeholder="10-digit number" required>
-    </div>
-    <div class="chat-field">
-      <label>Class</label>
-      <select>
-        <option>Class 1</option>
-        <option>Class 2</option>
-        <option>Class 3</option>
-        <option>Class 4</option>
-        <option>Class 5</option>
-        <option>Class 6</option>
-        <option>Class 7</option>
-        <option>Class 8</option>
-        <option>Class 9</option>
-        <option>Class 10</option>
-        <option>Class 11</option>
-        <option>Class 12</option>
-      </select>
-    </div>
-    <div class="chat-field">
-      <label>Subject Preference</label>
-      <input type="text" placeholder="Math, Science, Biology, Physics...">
-    </div>
-    <div class="chat-field">
-      <label>Location (Area in Bhubaneswar)</label>
-      <input type="text" placeholder="e.g. Rasulgarh">
-    </div>
-    <div style="display:flex;gap:8px;margin-top:8px"><button class="btn-primary" type="button">Send</button><button class="btn-ghost" type="button">Chat on WhatsApp</button></div>
-    <p class="small-note">By submitting, our coordinator will call within 24 hours to confirm details.</p>
-  </form>
+
+<header>
+    <h1>The Bhubaneswar Tutor</h1>
+    <p>Find Verified Home Tutors & NEET/IIT Coaching at Your Doorstep</p>
+</header>
+
+<section class="hero">
+    <h2>Best Home Tuition Service in Bhubaneswar</h2>
+    <p>CBSE | ICSE | NEET | IIT-JEE | Olympiad</p>
+</section>
+
+<div class="stats">
+    <div>10,000+ Students</div>
+    <div>1,000+ Educators</div>
+    <div>10 Years of Excellence</div>
 </div>
 
-  </section>  <section class="features">
-    <div class="feature">
-      <h4>Home Tuition (Class 1–12)</h4>
-      <p>Dedicated tutors for CBSE & ICSE boards only — tailored lesson plans and in-person sessions.</p>
-    </div>
-    <div class="feature">
-      <h4>Competitive Exams</h4>
-      <p>NEET, IIT-JEE & Olympiad focused coaching with experienced exam faculty.</p>
-    </div>
-    <div class="feature">
-      <h4>Online Live Classes</h4>
-      <p>Flexible live sessions for revision, doubt-clearing and accelerated learning.</p>
-    </div>
-    <div class="feature">
-      <h4>Skill Courses</h4>
-      <p>Spoken English, Coding basics and Exam strategy workshops.</p>
-    </div>
-  </section>  <section class="stats">
-    <div class="stat"><strong>10,000+</strong><span>Students Guided</span></div>
-    <div class="stat"><strong>1,000+</strong><span>Educators & Tutors</span></div>
-    <div class="stat"><strong>10</strong><span>Years in Education</span></div>
-    <div class="stat"><strong>100%</strong><span>CBSE & ICSE Focus</span></div>
-  </section>  <section class="services" id="services">
-    <div class="service">
-      <h3>Home Tuition — CBSE & ICSE</h3>
-      <p>Personalised in-home lessons for classes 1–12. (State boards not included)</p>
-    </div>
-    <div class="service">
-      <h3>NEET Preparation</h3>
-      <p>Structured NEET modules with tests, doubt clinics and performance tracking.</p>
-    </div>
-    <div class="service">
-      <h3>IIT-JEE Coaching</h3>
-      <p>Concept-first approach for aspirants aiming for top engineering colleges.</p>
-    </div>
-    <div class="service">
-      <h3>Olympiad Training</h3>
-      <p>Olympiad-level problem solving and test practice for curious students.</p>
-    </div>
-  </section>  <section class="gallery">
-    <!-- royalty-free student photos (Unsplash) -->
-    <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?q=80&w=800&auto=format&fit=crop" alt="students studying">
-    <img src="https://images.unsplash.com/photo-1596496054797-08c5a8c2e4a1?q=80&w=800&auto=format&fit=crop" alt="teacher teaching">
-    <img src="https://images.unsplash.com/photo-1516979187457-637abb4f9353?q=80&w=800&auto=format&fit=crop" alt="group study">
-    <img src="https://images.unsplash.com/photo-1557800636-894a64c1696f?q=80&w=800&auto=format&fit=crop" alt="online class">
-  </section>  <section class="register-section" id="register">
-    <div class="card">
-      <h3>Parent / Student Registration</h3>
-      <form>
-        <label>Student Name</label>
-        <input type="text" placeholder="Student full name"><label>Contact Number</label>
-    <input type="tel" placeholder="10-digit number">
-
-    <label>Class</label>
-    <select>
-      <option>1</option><option>2</option><option>3</option><option>4</option><option>5</option>
-      <option>6</option><option>7</option><option>8</option><option>9</option><option>10</option>
-      <option>11</option><option>12</option>
-    </select>
-
-    <label>Subject Preference</label>
-    <input type="text" placeholder="e.g. Maths, Physics, Biology">
-
-    <label>Location (Area in Bhubaneswar)</label>
-    <input type="text" placeholder="e.g. Patia">
-
-    <label>Preferred Mode</label>
-    <select>
-      <option>Home Tuition</option>
-      <option>Online Live Class</option>
-    </select>
-
-    <div style="margin-top:12px"><button type="submit">Register</button></div>
-  </form>
+<div class="photo-strip">
+    <img src="student1.jpg" alt="Student Photo">
+    <img src="student2.jpg" alt="Student Photo">
+    <img src="student3.jpg" alt="Student Photo">
 </div>
 
-<div class="card">
-  <h3>Teacher / Educator Registration</h3>
-  <form>
-    <label>Name</label>
-    <input type="text" placeholder="Your full name">
+<section class="section">
+    <h2>Student Registration</h2>
+    <div class="form-box">
+        <form>
+            <label>Name</label>
+            <input type="text" placeholder="Enter student name">
 
-    <label>Contact Number</label>
-    <input type="tel" placeholder="10-digit number">
+            <label>Contact Number</label>
+            <input type="text" placeholder="Enter phone number">
 
-    <label>Subjects You Excel In</label>
-    <input type="text" placeholder="e.g. Physics, Chemistry">
+            <label>Class</label>
+            <select>
+                <option>Class 1</option><option>Class 2</option><option>Class 3</option>
+                <option>Class 4</option><option>Class 5</option><option>Class 6</option>
+                <option>Class 7</option><option>Class 8</option><option>Class 9</option>
+                <option>Class 10</option><option>Class 11</option><option>Class 12</option>
+            </select>
 
-    <label>Qualification</label>
-    <input type="text" placeholder="e.g. B.Sc, M.Sc, B.Ed">
+            <label>Subject Preference</label>
+            <input type="text" placeholder="Physics, Chemistry, Math, English...">
 
-    <label>Experience (in years)</label>
-    <input type="number" placeholder="e.g. 3">
+            <label>Location</label>
+            <input type="text" placeholder="Enter area/locality">
 
-    <label>Available For</label>
-    <select>
-      <option>Home Tuition (Bhubaneswar)</option>
-      <option>Online</option>
-    </select>
+            <button class="btn">Submit</button>
+        </form>
+    </div>
+</section>
 
-    <div style="margin-top:12px"><button type="submit">Register as Teacher</button></div>
-  </form>
-</div>
+<section class="section">
+    <h2>Teacher Registration</h2>
+    <div class="form-box">
+        <form>
+            <label>Teacher Name</label>
+            <input type="text" placeholder="Enter your name">
 
-  </section>  <footer id="contact">
-    <p><strong>Contact:</strong> mathandsciencewithsantosh@gmail.com | +91 7978045133</p>
-    <p>&copy; 2025 The Bhubaneswar Tutor. All Rights Reserved.</p>
-  </footer>
+            <label>Contact Number</label>
+            <input type="text" placeholder="Enter phone number">
+
+            <label>Subjects Expert In</label>
+            <input type="text" placeholder="Math, Science, English...">
+
+            <label>Qualification</label>
+            <input type="text" placeholder="B.Sc, M.Sc, B.Tech, etc">
+
+            <label>Experience</label>
+            <input type="text" placeholder="Enter experience">
+
+            <button class="btn">Register</button>
+        </form>
+    </div>
+</section>
+
+<footer style="text-align:center;padding:20px;background:#1e3a8a;color:white;">
+    © 2025 The Bhubaneswar Tutor | Contact: 7978045133 | Email: mathandsciencewithsantosh@gmail.com
+</footer>
+
 </body>
   </html>
