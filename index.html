@@ -1,474 +1,269 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html><html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>The Bhubaneswar Tutor</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>THE BHUBANESWAR TUTOR</title>
+  <meta name="description" content="Home tuition & NEET/IIT/JEE coaching in Bhubaneswar — CBSE & ICSE. Book tutors at your doorstep." />
   <style>
-    :root {
-      --blue: #0b63d6;
-      --dark-blue: #074aa3;
-      --yellow: #f1c40f;
-      --light: #ffffff;
-      --muted: #6b7280;
-      --card: #f7fafc;
-    }
-    * { box-sizing: border-box; }
+    :root{--blue:#0b63d6;--darkblue:#074aa3;--yellow:#f1c40f;--bg:#ffffff;--muted:#6b7280}
+    *{box-sizing:border-box}
+    body{margin:0;font-family:Inter,system-ui,Arial,sans-serif;background:var(--bg);color:#0f1724;-webkit-font-smoothing:antialiased}
+    header{display:flex;align-items:center;justify-content:space-between;padding:14px 28px;background:linear-gradient(90deg,#ffffff,#eef6ff);border-bottom:1px solid rgba(11,99,214,0.06);position:sticky;top:0;z-index:50}
+    .logo{font-weight:800;font-size:20px;color:var(--darkblue)}
+    nav a{margin-left:16px;text-decoration:none;color:var(--darkblue);font-weight:600}
+    .hero{display:grid;grid-template-columns:1fr 420px;gap:28px;align-items:center;padding:56px 6vw;background:linear-gradient(180deg,#fff,#f6fbff)}
+    h1{font-size:34px;color:var(--darkblue);margin:0 0 12px}
+    p.lead{color:var(--muted);margin:0 0 18px;font-size:17px}
+    .cta{display:flex;gap:12px}
+    .btn{padding:12px 16px;border-radius:10px;border:0;cursor:pointer;font-weight:700}
+    .btn-primary{background:var(--blue);color:#fff}
+    .btn-outline{background:transparent;border:2px solid rgba(11,99,214,0.12);color:var(--darkblue)}/* quick enquiry card */
+.card{background:#fff;border-radius:12px;box-shadow:0 10px 30px rgba(2,6,23,0.06);padding:18px;border-left:6px solid var(--yellow)}
+.card h3{margin:0 0 8px;color:var(--darkblue)}
+label{font-size:13px;color:var(--muted);display:block;margin-bottom:6px}
+input,select,textarea{width:100%;padding:10px;border-radius:8px;border:1px solid #e6eef8;margin-bottom:10px}
 
-    body {
-      margin: 0;
-      font-family: Inter, system-ui, -apple-system, Arial, sans-serif;
-      background: var(--light);
-      color: #0f1724;
-      -webkit-font-smoothing: antialiased;
-    }
-    header {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 18px 28px;
-      background: linear-gradient(90deg, var(--light), #eef6ff);
-      border-bottom: 3px solid rgba(11,99,214,0.08);
-      position: sticky;
-      top: 0;
-      z-index: 50;
-    }
-    .logo {
-      font-weight: 800;
-      font-size: 24px;
-      color: var(--dark-blue);
-    }
-    nav a {
-      margin-left: 18px;
-      text-decoration: none;
-      color: var(--dark-blue);
-      font-weight: 600;
-    }
-    .hero {
-      display: grid;
-      grid-template-columns: 1fr 400px;
-      gap: 30px;
-      align-items: center;
-      padding: 60px 6vw;
-      background: linear-gradient(180deg, #ffffff, #f0f7ff);
-    }
-    .hero-left h1 {
-      font-size: 40px;
-      color: var(--dark-blue);
-      margin: 0 0 18px;
-    }
-    .hero-left p {
-      color: var(--muted);
-      font-size: 18px;
-      margin: 0 0 22px;
-    }
-    .cta-row {
-      display: flex;
-      gap: 12px;
-      align-items: center;
-    }
-    .btn-primary {
-      background: var(--blue);
-      color: #fff;
-      padding: 12px 18px;
-      border-radius: 8px;
-      text-decoration: none;
-      font-weight: 700;
-    }
-    .btn-ghost {
-      background: transparent;
-      color: var(--dark-blue);
-      padding: 10px 16px;
-      border-radius: 8px;
-      border: 2px solid rgba(11,99,214,0.12);
-      font-weight: 700;
-    }
-    .small-note {
-      font-size: 13px;
-      color: var(--muted);
-    }
+.features{display:flex;gap:16px;padding:28px 6vw;flex-wrap:wrap}
+.feature{flex:1;min-width:220px;background:linear-gradient(180deg,#fff,#fbfdff);border-radius:10px;padding:16px;border:1px solid rgba(11,99,214,0.04)}
+.feature h4{margin:0 0 6px;color:var(--darkblue)}
+.stats{display:flex;gap:18px;justify-content:center;padding:30px 6vw;background:linear-gradient(90deg,#f7fbff,#ffffff)}
+.stat{background:#f7fafc;padding:14px;border-radius:10px;min-width:140px;text-align:center;border-left:6px solid var(--blue)}
+.stat strong{display:block;font-size:22px;color:var(--darkblue)}
+.services{padding:36px 6vw;display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px}
+.service{background:#fff;border-radius:12px;padding:16px;border:1px solid rgba(7,74,163,0.06)}
 
-    .chat-card {
-      background: #fff;
-      border-radius: 12px;
-      box-shadow: 0 8px 30px rgba(2,6,23,0.08);
-      padding: 20px;
-      border-left: 6px solid var(--yellow);
-    }
-    .chat-card h3 {
-      margin: 0 0 10px;
-      color: var(--dark-blue);
-    }
-    .chat-field {
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-      margin-bottom: 10px;
-    }
-    .chat-field input,
-    .chat-field select {
-      padding: 10px;
-      border-radius: 8px;
-      border: 1px solid #e6eef8;
-    }
+.gallery{display:flex;gap:12px;padding:20px 6vw;flex-wrap:wrap;justify-content:center}
+.gallery img{width:220px;height:140px;object-fit:cover;border-radius:8px;box-shadow:0 8px 24px rgba(2,6,23,0.06)}
 
-    .features {
-      display: flex;
-      gap: 18px;
-      padding: 28px 6vw;
-      flex-wrap: wrap;
-    }
-    .feature {
-      flex: 1;
-      min-width: 220px;
-      background: linear-gradient(180deg, #fff, #fbfdff);
-      border-radius: 10px;
-      padding: 18px;
-      border: 1px solid rgba(11,99,214,0.04);
-    }
-    .feature h4 {
-      margin: 0 0 8px;
-      color: var(--dark-blue);
-    }
-    .feature p {
-      margin: 0;
-      color: var(--muted);
-    }
+.register{padding:36px 6vw;background:linear-gradient(180deg,#fff,#f7fbff);display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.footer{padding:22px 6vw;text-align:center;color:var(--muted);border-top:1px solid rgba(7,74,163,0.06);background:linear-gradient(180deg,#eef6ff,#ffffff)}
 
-    .stats {
-      padding: 40px 6vw;
-      background: linear-gradient(90deg, #f7fbff, #ffffff);
-      display: flex;
-      gap: 20px;
-      justify-content: center;
-      flex-wrap: wrap;
-    }
-    .stat {
-      background: var(--card);
-      padding: 18px;
-      border-radius: 10px;
-      min-width: 160px;
-      text-align: center;
-      border-left: 6px solid var(--blue);
-    }
-    .stat strong {
-      display: block;
-      font-size: 26px;
-      color: var(--dark-blue);
-    }
-    .stat span {
-      color: var(--muted);
-    }
+.whatsapp{position:fixed;right:20px;bottom:20px;width:60px;height:60px;border-radius:50%;background:#25d366;color:#fff;display:flex;align-items:center;justify-content:center;font-size:26px;box-shadow:0 8px 30px rgba(2,6,23,0.12);z-index:100}
 
-    .services {
-      padding: 40px 6vw;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 18px;
-    }
-    .service {
-      background: #fff;
-      border-radius: 12px;
-      padding: 18px;
-      border: 1px solid rgba(7,74,163,0.06);
-    }
-    .service h3 {
-      margin: 0 0 8px;
-      color: var(--dark-blue);
-    }
-    .service p {
-      margin: 0;
-      color: var(--muted);
-    }
+/* floating enquiry */
+.enquiry{position:fixed;right:0;top:45%;transform:translateY(-50%);background:#fff;padding:12px;border-radius:8px 0 0 8px;box-shadow:0 8px 24px rgba(2,6,23,0.08);width:260px;z-index:90}
+.enquiry h4{margin:0 0 8px;color:var(--darkblue)}
 
-    .gallery {
-      display: flex;
-      gap: 12px;
-      padding: 20px 6vw;
-      flex-wrap: wrap;
-      justify-content: center;
-    }
-    .gallery img {
-      width: 200px;
-      height: 140px;
-      object-fit: cover;
-      border-radius: 8px;
-      box-shadow: 0 6px 20px rgba(2,6,23,0.06);
-    }
+/* demo button */
+.demo-fixed{position:fixed;left:20px;bottom:24px;background:var(--yellow);color:#000;padding:12px 14px;border-radius:12px;font-weight:800;box-shadow:0 8px 24px rgba(2,6,23,0.08);z-index:100}
 
-    .register-section {
-      padding: 40px 6vw;
-      background: linear-gradient(180deg, #fff, #f7fbff);
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 20px;
-    }
-    .card {
-      background: #fff;
-      border-radius: 12px;
-      padding: 20px;
-      border: 1px solid rgba(11,99,214,0.04);
-      position: relative;
-    }
-    .card h3 {
-      color: var(--dark-blue);
-      margin-top: 0;
-    }
-    .form-row {
-      display: flex;
-      gap: 12px;
-    }
-    label {
-      font-size: 14px;
-      color: var(--muted);
-      margin-bottom: 6px;
-      display: block;
-    }
-    input[type=text],
-    input[type=tel],
-    input[type=number],
-    select, textarea {
-      width: 100%;
-      padding: 10px;
-      border-radius: 8px;
-      border: 1px solid #e6eef8;
-    }
-    button[type=submit] {
-      background: var(--yellow);
-      border: none;
-      padding: 12px 16px;
-      border-radius: 8px;
-      font-weight: 800;
-      cursor: pointer;
-    }
+@media(max-width:880px){.hero{grid-template-columns:1fr}.gallery img{width:48%}.register{grid-template-columns:1fr}}
 
-    footer {
-      padding: 24px 6vw;
-      text-align: center;
-      color: var(--muted);
-      border-top: 1px solid rgba(7,74,163,0.06);
-      background: linear-gradient(180deg, #eef6ff, #ffffff);
-    }
-
-    /* WhatsApp floating button */
-    .whatsapp-button {
-      position: fixed;
-      bottom: 24px;
-      right: 24px;
-      background: #25d366;
-      color: white;
-      border-radius: 50%;
-      width: 60px;
-      height: 60px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 30px;
-      text-decoration: none;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-      z-index: 100;
-    }
-
-    /* Floating enquiry form */
-    .enquiry-form {
-      position: fixed;
-      right: 0;
-      top: 50%;
-      transform: translateY(-50%);
-      background: #fff;
-      padding: 12px;
-      border-radius: 8px 0 0 8px;
-      box-shadow: 0 8px 24px rgba(2,6,23,0.1);
-      width: 250px;
-      z-index: 90;
-    }
-    .enquiry-form h4 {
-      margin: 0 0 10px;
-      color: var(--dark-blue);
-      font-size: 16px;
-    }
-    .enquiry-form input {
-      margin-bottom: 8px;
-    }
-
-    @media (max-width: 880px) {
-      .hero { grid-template-columns: 1fr; }
-      .register-section { grid-template-columns: 1fr; }
-      .gallery img { width: 45%; }
-    }
   </style>
 </head>
 <body>
-
   <header>
-    <div class="logo">The Bhubaneswar Tutor</div>
+    <div class="logo">THE BHUBANESWAR TUTOR</div>
     <nav>
       <a href="#home">Home</a>
       <a href="#services">Services</a>
       <a href="#register">Register</a>
       <a href="#contact">Contact</a>
     </nav>
-  </header>
-
-  <section class="hero" id="home">
-    <div class="hero-left">
-      <h1>Personalised Home Tuition & Exam Coaching at Your Doorstep</h1>
-      <p>CBSE & ICSE | NEET | IIT-JEE | Olympiad — quality education, tailored for Bhubaneswar</p>
-      <div class="cta-row">
-        <a class="btn-primary" href="#register">Register Now</a>
-        <a class="btn-ghost" href="mailto:mathandsciencewithsantosh@gmail.com">Email Us</a>
-      </div>
-      <div class="small-note">Call / WhatsApp: +91 7978045133</div>
-    </div>
-
-    <div class="chat-card">
-      <h3>Quick Enquiry — Student Info</h3>
-      <form>
-        <div class="chat-field">
-          <label>Student Name</label>
-          <input type="text" placeholder="Rahul Kumar" required>
+  </header>  <main>
+    <section class="hero" id="home">
+      <div>
+        <h1>Personalised home tuition & NEET/IIT coaching — at your doorstep</h1>
+        <p class="lead">CBSE & ICSE tuition, NEET, IIT-JEE & Olympiad preparation. Trusted teachers in Bhubaneswar — tailored lessons, proven results.</p>
+        <div class="cta">
+          <button class="btn btn-primary" id="scrollRegister">Register Now</button>
+          <a class="btn btn-outline" href="mailto:mathandsciencewithsantosh@gmail.com">Email Us</a>
         </div>
-        <div class="chat-field">
-          <label>Contact Number</label>
-          <input type="tel" placeholder="10-digit number" required>
-        </div>
-        <div class="chat-field">
-          <label>Class</label>
-          <select>
-            <option>Class 1</option><option>Class 2</option><option>Class 3</option><option>Class 4</option><option>Class 5</option><option>Class 6</option><option>Class 7</option><option>Class 8</option><option>Class 9</option><option>Class 10</option><option>Class 11</option><option>Class 12</option>
-          </select>
-        </div>
-        <div class="chat-field">
-          <label>Subject Preference</label>
-          <input type="text" placeholder="Math, Science, Biology…">
-        </div>
-        <div class="chat-field">
-          <label>Location</label>
-          <input type="text" placeholder="Area in Bhubaneswar">
-        </div>
-        <div style="display:flex; gap:8px; margin-top:8px;">
-          <button type="button" class="btn-primary">Send</button>
-          <a class="btn-ghost" href="https://wa.me/917978045133?text=Hello%2C%20I%20want%20to%20register%20for%20tuition">Chat on WhatsApp</a>
-        </div>
-        <p class="small-note">We will call back within 24 hours to confirm.</p>
-      </form>
-    </div>
-  </section>
+        <p style="margin-top:12px;color:var(--muted)">Call / WhatsApp: +91 7978045133</p>
+      </div><div class="card" aria-live="polite">
+    <h3>Quick Enquiry — Student Info</h3>
+    <!-- IMPORTANT: replace the value of `FORM_ENDPOINT` in the script at the end with your Apps Script web-app URL -->
+    <form id="quickEnquiry">
+      <label>Student Name</label>
+      <input name="studentName" type="text" placeholder="e.g. Rahul Kumar" required>
+      <label>Contact Number</label>
+      <input name="phone" type="tel" placeholder="10-digit mobile" required>
+      <label>Class</label>
+      <select name="class">
+        <option>Class 1</option><option>Class 2</option><option>Class 3</option><option>Class 4</option><option>Class 5</option><option>Class 6</option><option>Class 7</option><option>Class 8</option><option>Class 9</option><option>Class 10</option><option>Class 11</option><option>Class 12</option>
+      </select>
+      <label>Subject Preference</label>
+      <input name="subjects" type="text" placeholder="Math, Science, Biology...">
+      <label>Location (Area)</label>
+      <input name="location" type="text" placeholder="e.g. Patia">
+      <div style="display:flex;gap:8px;margin-top:6px"><button class="btn btn-primary" type="submit">Send</button><button class="btn btn-outline" type="button" id="whatsBtn">Chat on WhatsApp</button></div>
+      <p style="font-size:13px;color:var(--muted);margin-top:8px">Our coordinator will call within 24 hours to confirm.</p>
+    </form>
+  </div>
+</section>
 
-  <section class="features">
-    <div class="feature">
-      <h4>Home Tuition</h4>
-      <p>Personalized in-home classes for CBSE & ICSE students (Class 1-12).</p>
-    </div>
-    <div class="feature">
-      <h4>Competitive Exam Coaching</h4>
-      <p>Focused coaching for NEET, IIT-JEE & Olympiad aspirants.</p>
-    </div>
-    <div class="feature">
-      <h4>Online Live Classes</h4>
-      <p>Flexible online sessions for revision, doubt-clearing, and test prep.</p>
-    </div>
-    <div class="feature">
-      <h4>Skill Development</h4>
-      <p>Spoken English, Coding Basics, and more.</p>
-    </div>
-  </section>
+<section class="features">
+  <div class="feature"><h4>Home Tuition (Class 1–12)</h4><p>In-person tutors — CBSE & ICSE only. Custom lesson plans at student's home.</p></div>
+  <div class="feature"><h4>NEET | IIT-JEE | Olympiad</h4><p>Structured modules, mock tests and doubt clinics for competitive success.</p></div>
+  <div class="feature"><h4>Online Live Classes</h4><p>Flexible, high-quality online sessions for revision and doubt clearing.</p></div>
+  <div class="feature"><h4>Skill Courses</h4><p>Spoken English, Basic Coding and exam strategy workshops.</p></div>
+</section>
 
-  <section class="stats">
-    <div class="stat"><strong>10,000+</strong><span>Students</span></div>
-    <div class="stat"><strong>1,000+</strong><span>Educators</span></div>
-    <div class="stat"><strong>10</strong><span>Years of Experience</span></div>
-    <div class="stat"><strong>100%</strong><span>CBSE & ICSE Focus</span></div>
-  </section>
+<section class="stats" aria-hidden="false">
+  <div class="stat"><strong>10,000+</strong><span>Students</span></div>
+  <div class="stat"><strong>1,000+</strong><span>Educators</span></div>
+  <div class="stat"><strong>10</strong><span>Years Experience</span></div>
+  <div class="stat"><strong>100%</strong><span>CBSE & ICSE Focus</span></div>
+</section>
 
-  <section class="gallery" aria-label="Student Photos">
-    <img src="https://cdn.pixabay.com/photo/2020/07/05/13/26/students-5372390_1280.jpg" alt="Students studying together"> <!-- from Pixabay 1 -->
-    <img src="https://cdn.pixabay.com/photo/2015/10/23/08/46/students-998989_1280.jpg" alt="School students studying"> <!-- from Pixabay 2 -->
-    <img src="https://cdn.pixabay.com/photo/2019/05/14/22/34/students-4209435_1280.jpg" alt="Students working together"> <!-- a random Pixabay student image, safe to use 3 -->
-  </section>
+<section class="services" id="services">
+  <div class="service"><h3>Home Tuition — CBSE & ICSE</h3><p>Personalised in-home lessons for classes 1–12. State boards not included.</p></div>
+  <div class="service"><h3>NEET Preparation</h3><p>Topic-wise coaching, tests and performance reports.</p></div>
+  <div class="service"><h3>IIT-JEE Coaching</h3><p>Concept-first approach for top rankers.</p></div>
+  <div class="service"><h3>Olympiad Training</h3><p>Problem-solving and timed mock tests.</p></div>
+</section>
 
-  <section class="register-section" id="register">
-    <div class="card">
-      <h3>Student / Parent Registration</h3>
-      <form>
-        <label>Student Name</label>
-        <input type="text" placeholder="Full Name">
+<section class="gallery" aria-label="Student photos">
+  <!-- home-tuition style images (royalty-free) -->
+  <img src="https://cdn.pixabay.com/photo/2017/01/31/16/23/tutoring-2022377_1280.jpg" alt="home tuition">
+  <img src="https://cdn.pixabay.com/photo/2018/04/23/17/03/teacher-3347078_1280.jpg" alt="tutor with student">
+  <img src="https://cdn.pixabay.com/photo/2016/11/29/03/53/education-1868725_1280.jpg" alt="students learning">
+</section>
 
-        <label>Contact Number</label>
-        <input type="tel" placeholder="10-digit number">
-
-        <label>Class</label>
-        <select>
-          <option>1</option><option>2</option><option>3</option><option>4</option><option>5</option>
-          <option>6</option><option>7</option><option>8</option><option>9</option><option>10</option>
-          <option>11</option><option>12</option>
-        </select>
-
-        <label>Subject Preference</label>
-        <input type="text" placeholder="Math, Physics, Biology…">
-
-        <label>Location (Area)</label>
-        <input type="text" placeholder="e.g. Patia, Bhubaneswar">
-
-        <label>Preferred Mode</label>
-        <select>
-          <option>Home Tuition</option>
-          <option>Online Live Class</option>
-        </select>
-
-        <button type="submit">Register</button>
-      </form>
-    </div>
-
-    <div class="card">
-      <h3>Teacher / Educator Registration</h3>
-      <form>
-        <label>Name</label>
-        <input type="text" placeholder="Your Name">
-
-        <label>Contact Number</label>
-        <input type="tel" placeholder="10-digit number">
-
-        <label>Subjects You Excel In</label>
-        <input type="text" placeholder="Math, Chemistry, Biology…">
-
-        <label>Qualification</label>
-        <input type="text" placeholder="B.Sc, M.Sc, B.Ed, etc.">
-
-        <label>Experience (Years)</label>
-        <input type="number" placeholder="e.g. 3">
-
-        <label>Available For</label>
-        <select>
-          <option>Home Tuition (Bhubaneswar)</option>
-          <option>Online Coaching</option>
-        </select>
-
-        <button type="submit">Register as Teacher</button>
-      </form>
-    </div>
-  </section>
-
-  <footer id="contact">
-    <p>Contact: mathandsciencewithsantosh@gmail.com | +91 7978045133</p>
-    <p>&copy; 2025 The Bhubaneswar Tutor. All Rights Reserved.</p>
-  </footer>
-
-  <!-- WhatsApp Chat Button -->
-  <a class="whatsapp-button" href="https://wa.me/917978045133" target="_blank" aria-label="Chat on WhatsApp">
-    💬
-  </a>
-
-  <!-- Floating Enquiry Form -->
-  <div class="enquiry-form">
-    <h4>Quick Enquiry</h4>
-    <form>
-      <input type="text" placeholder="Your Name" required>
-      <input type="tel" placeholder="Phone Number" required>
-      <textarea placeholder="Your Message..." rows="3" style="width:100%; padding:8px; border-radius:5px; border:1px solid #ccc;"></textarea>
-      <button type="submit">Send</button>
+<section class="register" id="register">
+  <div class="card">
+    <h3>Student / Parent Registration</h3>
+    <!-- THIS FORM POSTS via JavaScript to your Apps Script Web App endpoint (Google Sheets). -->
+    <form id="studentForm">
+      <label>Student Name</label>
+      <input name="name" type="text" required>
+      <label>Contact Number</label>
+      <input name="phone" type="tel" required>
+      <label>Class</label>
+      <select name="class">
+        <option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>7</option><option>8</option><option>9</option><option>10</option><option>11</option><option>12</option>
+      </select>
+      <label>Subject Preference</label>
+      <input name="subjects" type="text">
+      <label>Location (Area)</label>
+      <input name="location" type="text">
+      <label>Preferred Mode</label>
+      <select name="mode"><option>Home Tuition</option><option>Online</option></select>
+      <div style="margin-top:10px"><button type="submit" class="btn" style="background:var(--darkblue);color:#fff;border-radius:8px">Submit Registration</button></div>
+      <p style="font-size:13px;color:var(--muted);margin-top:8px">By submitting you agree to be contacted for service confirmation.</p>
     </form>
   </div>
 
-</body>
+  <div class="card">
+    <h3>Teacher / Educator Registration</h3>
+    <form id="teacherForm">
+      <label>Name</label>
+      <input name="tname" type="text" required>
+      <label>Contact Number</label>
+      <input name="tphone" type="tel" required>
+      <label>Subjects You Excel In</label>
+      <input name="tsubjects" type="text">
+      <label>Qualification</label>
+      <input name="tqual" type="text">
+      <label>Experience (years)</label>
+      <input name="texp" type="number" min="0">
+      <label>Available For</label>
+      <select name="tavail"><option>Home Tuition (Bhubaneswar)</option><option>Online</option></select>
+      <div style="margin-top:10px"><button type="submit" class="btn" style="background:var(--yellow);color:#000;border-radius:8px">Register as Teacher</button></div>
+    </form>
+  </div>
+</section>
+
+  </main>  <footer id="contact" class="footer">
+    <p><strong>Contact:</strong> mathandsciencewithsantosh@gmail.com | +91 7978045133</p>
+    <p>&copy; 2025 THE BHUBANESWAR TUTOR</p>
+  </footer>  <!-- WhatsApp + Demo buttons + floating enquiry --><a class="whatsapp" href="https://wa.me/917978045133" target="_blank" aria-label="WhatsApp">💬</a> <button class="demo-fixed" id="freeDemo">Book a Free Demo Class</button>
+
+  <div class="enquiry" aria-hidden="false">
+    <h4>Quick Enquiry</h4>
+    <form id="enqForm">
+      <input name="enqname" type="text" placeholder="Your Name" required>
+      <input name="enqphone" type="tel" placeholder="Phone" required>
+      <textarea name="enqmsg" placeholder="Message" rows="3" style="width:100%;padding:8px;border-radius:6px;border:1px solid #e6eef8;margin-bottom:8px"></textarea>
+      <button type="submit" style="background:var(--blue);color:#fff;padding:8px 10px;border-radius:6px;border:0">Send</button>
+    </form>
+  </div>  <script>
+    /*
+      Google Apps Script integration instructions are below.
+      1) Create a Google Sheet (name it e.g. "The Bhubaneswar Tutor - Leads").
+      2) Extensions → Apps Script. Replace the script with the code provided in the comment below and deploy as Web App (execute as: Me, who has access: Anyone).
+      3) Copy the Web App URL and paste it into FORM_ENDPOINT below.
+
+      Apps Script code to use (copy into script editor and deploy):
+
+      ----------------------------------------
+      // Google Apps Script code START
+      function doPost(e){
+        try{
+          const ss = SpreadsheetApp.openById('REPLACE_WITH_SHEET_ID'); // or use getActiveSpreadsheet() if created inside the sheet
+          const sheet = ss.getSheetByName('Sheet1') || ss.getSheets()[0];
+          const data = JSON.parse(e.postData.contents);
+          const now = new Date();
+          // Normalize fields
+          const row = [now, data.type || '', data.name || data.studentName || '', data.phone || '', data.class || '', data.subjects || data.subject || '', data.location || '', data.mode || '', JSON.stringify(data)];
+          sheet.appendRow(row);
+          return ContentService.createTextOutput(JSON.stringify({status:'ok'})).setMimeType(ContentService.MimeType.JSON);
+        }catch(err){
+          return ContentService.createTextOutput(JSON.stringify({status:'error',message:err.toString()})).setMimeType(ContentService.MimeType.JSON);
+        }
+      }
+      // Google Apps Script code END
+      ----------------------------------------
+
+      IMPORTANT: If you use openById, replace REPLACE_WITH_SHEET_ID with your spreadsheet ID (the long ID in the sheet URL).
+      After deployment you'll get a web app URL like: https://script.google.com/macros/s/XXXX/exec
+      Use that URL as FORM_ENDPOINT.
+    */
+
+    const FORM_ENDPOINT = "REPLACE_WITH_YOUR_APPS_SCRIPT_WEBAPP_URL"; // <- paste your apps script web app URL here
+
+    function postForm(url, data){
+      return fetch(url, {method:'POST', body:JSON.stringify(data), headers:{'Content-Type':'application/json'}})
+        .then(r=>r.ok? r.json() : Promise.reject(r.statusText));
+    }
+
+    // quick enquiry
+    const quick = document.getElementById('quickEnquiry');
+    if(quick) quick.addEventListener('submit', function(e){
+      e.preventDefault();
+      const payload = Object.fromEntries(new FormData(this).entries());
+      payload.type = 'quick';
+      if(FORM_ENDPOINT.indexOf('REPLACE_WITH')===0){alert('Forms are not active — please deploy the provided Apps Script and paste its web app URL into the code.');return}
+      postForm(FORM_ENDPOINT, payload).then(()=>alert('Thanks! We will call you soon.')).catch(err=>{console.error(err);alert('Submission failed — check endpoint.')});
+      this.reset();
+    });
+
+    // student form
+    const sform = document.getElementById('studentForm');
+    if(sform) sform.addEventListener('submit', function(e){
+      e.preventDefault();
+      const payload = Object.fromEntries(new FormData(this).entries());
+      payload.type = 'student';
+      if(FORM_ENDPOINT.indexOf('REPLACE_WITH')===0){alert('Forms are not active — please deploy the provided Apps Script and paste its web app URL into the code.');return}
+      postForm(FORM_ENDPOINT, payload).then(()=>alert('Student registered — coordinator will call.')).catch(err=>{console.error(err);alert('Submission failed — check endpoint.')});
+      this.reset();
+    });
+
+    // teacher form
+    const tform = document.getElementById('teacherForm');
+    if(tform) tform.addEventListener('submit', function(e){
+      e.preventDefault();
+      const payload = Object.fromEntries(new FormData(this).entries());
+      payload.type = 'teacher';
+      if(FORM_ENDPOINT.indexOf('REPLACE_WITH')===0){alert('Forms are not active — please deploy the provided Apps Script and paste its web app URL into the code.');return}
+      postForm(FORM_ENDPOINT, payload).then(()=>alert('Thank you — we will contact you.')).catch(err=>{console.error(err);alert('Submission failed — check endpoint.')});
+      this.reset();
+    });
+
+    // enquiry form
+    const enq = document.getElementById('enqForm');
+    if(enq) enq.addEventListener('submit', function(e){
+      e.preventDefault();
+      const payload = Object.fromEntries(new FormData(this).entries());
+      payload.type = 'enquiry';
+      if(FORM_ENDPOINT.indexOf('REPLACE_WITH')===0){alert('Forms are not active — please deploy the provided Apps Script and paste its web app URL into the code.');return}
+      postForm(FORM_ENDPOINT, payload).then(()=>alert('Message received — we will reach out.')).catch(err=>{console.error(err);alert('Submission failed — check endpoint.')});
+      this.reset();
+    });
+
+    // demo button scroll/register
+    document.getElementById('freeDemo').addEventListener('click', function(){document.getElementById('register').scrollIntoView({behavior:'smooth'})});
+    document.getElementById('scrollRegister').addEventListener('click', function(){document.getElementById('register').scrollIntoView({behavior:'smooth'})});
+    document.getElementById('whatsBtn').addEventListener('click', function(){window.open('https://wa.me/917978045133?text=Hi%20I%20want%20to%20register%20for%20tuition','_blank')});
+  </script></body>
 </html>
